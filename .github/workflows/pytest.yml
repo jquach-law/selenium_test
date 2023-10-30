@@ -1,13 +1,27 @@
-steps:
-- uses: actions/checkout@v4
-- name: Set up Python
-  uses: actions/setup-python@v4
-  with:
-    python-version: '3.x'
-- name: Install dependencies
-  run: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-- name: Test with pytest
-  run: |
-    pytest
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main  # Replace with your branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8  # Specify the Python version you need
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pytest
+        run: pytest  # Replace with the command to run your tests
