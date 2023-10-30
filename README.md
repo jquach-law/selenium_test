@@ -12,7 +12,7 @@ Tests features on https://sentact.com/
 * Python
 * Chrome Driver
 * Pytest
-* Also, using Continous Integration with GitHub Action to autorun pytest on push.
+* Using Continous Integration with GitHub Action to autorun pytest on push
 
 ## Installation & Run
 ```bash
